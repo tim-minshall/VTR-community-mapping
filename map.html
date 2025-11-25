@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Community Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+      html, body, #map { height: 400px; width: 600px; margin: 40px auto;}
+      #map { height: 80vh; }
+    </style>
+  </head>
+  <body>
+    <h1>My Community Map</h1>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-providers@latest/leaflet-providers.js"></script>
+    <script>
+      // create map and centre on London
+      var map = L.map('map').setView([51.5074, -0.1278], 13);
+      // add OpenStreetMap basemap
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+      // add markers to map
+      L.marker([51.588068, -0.070589]).addTo(map).bindPopup(`
+        <h3>Post Bar</h3>
+        <p>Post Bar is cultural centre and music venue offering space for creative projects and cooperative organising.</p>
+        <p>Home of the London School of Solarpunk.</p>
+      `);
+    </script>
+  </body>
+</html>
+
