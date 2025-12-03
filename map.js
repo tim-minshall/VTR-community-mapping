@@ -6,7 +6,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap contributors'
 }).addTo(map);
 // add markers to map
-const marker = L.marker([51.588068, -0.070589]).addTo(map).bindPopup(`
+L.marker([51.588068, -0.070589]).addTo(map).bindPopup(`
   <h3>Post Bar</h3>
   <p>Post Bar is cultural centre and music venue offering space for creative projects and cooperative organising.</p>
   <p>Home of the London School of Solarpunk.</p>
